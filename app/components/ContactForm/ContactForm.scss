@@ -1,0 +1,20 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.form {
+  @include container;
+}
+
+.submitButton {
+  background-color: $primary;
+  color: $white;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  width: 100%;
+
+  &[disabled] {
+    opacity: .3;
+    cursor: not-allowed;
+  }
+}

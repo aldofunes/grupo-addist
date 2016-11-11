@@ -1,0 +1,27 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.menuItem {
+  padding: 1em;
+  text-decoration: none;
+  color: #777;
+  border-bottom: 1px solid $baseGrey;
+  background-color: #f7f7f7;
+
+  &:hover {
+    background-color: $lightGrey;
+  }
+}
+
+.activeMenuItem {
+  color: #777;
+}

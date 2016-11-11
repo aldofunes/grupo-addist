@@ -1,0 +1,29 @@
+@import '../../../styles/breakpoints';
+@import '../../../styles/colors';
+
+.topBar {
+  display: flex;
+  height: 4em;
+  border-bottom: 1px solid $lightGrey;
+  background: $white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.logo {
+  height: 3em;
+  margin: .6em 0;
+  flex: 1;
+}
+
+.toggleButton {
+  padding: 1em;
+  color: #333;
+  border: none;
+  background: none;
+
+  @include media(lg) {
+    display: none;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../styles/breakpoints';
+
+.container {
+  min-height: 10em;
+  display: flex;
+  background-color: #f0f0f0;
+  align-items: center;
+  padding: 2em 1em;
+
+  @include media(md) {
+    & {
+      margin: 2em;
+      border-radius: 2em;
+    }
+  }
+}
+
+.text {
+  flex: 1 1 100%;
+  text-align: center;
+}

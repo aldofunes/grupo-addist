@@ -1,0 +1,59 @@
+@import '../../styles/breakpoints';
+@import '../../styles/colors';
+
+.container
+{
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    padding: 1em;
+
+    color: #fefefe;
+    background: #222;
+
+    @include media(sm)
+    {
+        &
+        {
+            left: 0;
+
+            width: 22em;
+
+            border-top-right-radius: 1em;
+        }
+    }
+}
+
+.text
+{
+    a
+    {
+        text-decoration: none;
+
+        color: #f0f0f0;
+        border-bottom: 1px dotted #f0f0f0;
+
+        &:hover
+        {
+            font-weight: 400;
+        }
+    }
+}
+
+.button
+{
+    width: 100%;
+    padding: .5em;
+
+    color: $primary;
+    border: 1px solid $primary;
+    border-radius: .5em;
+    background: none;
+
+    &:hover
+    {
+        color: #f0f0f0;
+        background: $primary;
+    }
+}

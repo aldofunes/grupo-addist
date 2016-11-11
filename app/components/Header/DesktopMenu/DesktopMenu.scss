@@ -1,0 +1,25 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.menu {
+  display: none;
+
+  @include media(lg) {
+    display: flex;
+  }
+}
+
+.menuItem {
+  padding: 1em;
+  text-decoration: none;
+  color: #777;
+
+  &:hover {
+    background-color: $lightGrey;
+  }
+}
+
+.activeMenuItem {
+  background-color: $lightGrey;
+
+}
