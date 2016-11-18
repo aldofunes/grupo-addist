@@ -28,7 +28,7 @@ const common = merge(
     }
   },
   parts.indexTemplate({
-    title: 'BMG Tech',
+    title: 'ADDIST',
     appMountId: 'app'
   }),
   parts.getImg(),

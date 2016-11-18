@@ -20,10 +20,17 @@ class App extends React.Component {
     return (
       <div className={styles.app}>
         <Header />
-        <div className={styles.main}>{children}</div>
+        <div className={styles.main}>
+          {children}
+        </div>
         <Footer />
 
-        <CookieConsent />
+        <CookieConsent
+          text="Este sitio usa cookies para que tengas la mejor experiencia"
+          linkText="Más información"
+          link="/privacidad"
+          buttonText="Entendido"
+        />
       </div>
     );
   }

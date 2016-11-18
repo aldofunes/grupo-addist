@@ -20,7 +20,7 @@ class Header extends React.Component {
     this.setState({
       isOpen: !isOpen
     });
-  };
+  }
 
   render() {
     const { isOpen } = this.state;
@@ -31,7 +31,6 @@ class Header extends React.Component {
         {isOpen ? (
           <MobileMenu onClick={this.toggle} />
         ) : ''}
-
 
       </div>
     );

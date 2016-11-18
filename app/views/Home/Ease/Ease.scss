@@ -1,0 +1,41 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.section {
+}
+
+.container {
+  @include container;
+}
+
+.column {
+  flex: 1 1 100%;
+  text-align: center;
+  box-sizing: border-box;
+
+  @include media(md) {
+    flex: 1 1 50%;
+    padding: 0 1em;
+  }
+}
+.imageColumn {
+  @include media(md) {
+    order: -1;
+  }
+}
+
+.image {
+  width: 100%;
+  border-radius: 1em;
+  box-shadow: 0 0 1em $darkGrey;
+}
+
+.button {
+  padding: 1em;
+  background-color: $secondary;
+  border-radius: .5em;
+  color: $white;
+  display: block;
+  margin-top: 1em;
+  text-decoration: none;
+}

@@ -2,9 +2,9 @@ import React from 'react';
 import {Link} from 'react-router';
 import FaHome from 'react-icons/lib/fa/home';
 import FaInfo from 'react-icons/lib/fa/info';
-import FaMobile from 'react-icons/lib/fa/mobile';
-import FaDesktop from 'react-icons/lib/fa/desktop';
-import FaBriefcase from 'react-icons/lib/fa/briefcase';
+import FaServer from 'react-icons/lib/fa/server';
+import MdPeople from 'react-icons/lib/md/people';
+import MdBusiness from 'react-icons/lib/md/business';
 import FaInbox from 'react-icons/lib/fa/inbox';
 import styles from './MobileMenu.scss';
 
@@ -12,50 +12,51 @@ const MobileMenu = ({onClick}) => (
   <nav className={styles.menu}>
     <Link
       className={styles.menuItem}
+      activeClassName={styles.activeMenuItem}
       to="/"
       onClick={onClick}
     >
-      <FaHome /> Home
+      <FaHome /> Inicio
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/about"
+      to="/nosotros"
       onClick={onClick}
     >
-      <FaInfo /> About us
+      <FaInfo /> Nosotros
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/apps"
+      to="/servicios"
       onClick={onClick}
     >
-      <FaMobile /> Apps
+      <FaServer /> Servicios
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/sites"
+      to="/empleados"
       onClick={onClick}
     >
-      <FaDesktop /> Sites
+      <MdPeople /> Empleados
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/work"
+      to="/empresas"
       onClick={onClick}
     >
-      <FaBriefcase /> How we work
+      <MdBusiness /> Empresas
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/contact"
+      to="/contacto"
       onClick={onClick}
     >
-      <FaInbox /> Contact us
+      <FaInbox /> Contacto
     </Link>
   </nav>
 );

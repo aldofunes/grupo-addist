@@ -1,5 +1,9 @@
 import React from 'react';
 import styles from './Home.scss';
+import Banner from './Banner';
+import Experts from './Experts';
+import Competitive from './Competitive';
+import Ease from './Ease';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -9,7 +13,10 @@ class Home extends React.Component {
   render() {
     return (
       <div className={styles.home}>
-        <h1>Home page</h1>
+        <Banner />
+        <Experts />
+        <Competitive />
+        <Ease />
       </div>
     );
   }

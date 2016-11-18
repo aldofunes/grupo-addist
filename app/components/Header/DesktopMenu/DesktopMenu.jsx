@@ -7,42 +7,42 @@ const MobileMenu = ({ onClick }) => (
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/about"
+      to="/nosotros"
       onClick={onClick}
     >
-      About us
+      Nosotros
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/apps"
+      to="/servicios"
       onClick={onClick}
     >
-      Apps
+      Servicios
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/sites"
+      to="/empleados"
       onClick={onClick}
     >
-      Sites
+      Empleados
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/work"
+      to="/empresas"
       onClick={onClick}
     >
-      How we work
+      Empresas
     </Link>
     <Link
       className={styles.menuItem}
       activeClassName={styles.activeMenuItem}
-      to="/contact"
+      to="/contacto"
       onClick={onClick}
     >
-      Contact us
+      Contacto
     </Link>
   </nav>
 );

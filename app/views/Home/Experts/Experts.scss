@@ -1,0 +1,14 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.section {
+}
+
+.container {
+  @include container;
+}
+
+.column {
+  flex: 1 1 100%;
+  text-align: center;
+}
