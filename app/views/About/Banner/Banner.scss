@@ -1,0 +1,23 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.section {
+  padding: 2em 1em;
+  @include container;
+}
+
+.logo {
+  flex: 1 1 100%;
+
+  img {
+    width: 100%;
+  }
+
+  @include media(sm) {
+    flex: 0 1 30em;
+  }
+}
+
+.text {
+  text-align: center;
+}

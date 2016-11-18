@@ -1,0 +1,28 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.section {
+  padding: 2em 1em;
+  background-color: $lighterGrey;
+}
+
+.container {
+  @include container;
+  text-align: center;
+}
+
+.years {
+  flex: 1 1 100%;
+
+  @include media(md) {
+    flex: 0 1 30%;
+  }
+}
+
+.description {
+  flex: 1 1 100%;
+
+  @include media(md) {
+    flex: 0 1 70%;
+  }
+}

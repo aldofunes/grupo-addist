@@ -1,0 +1,10 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.section {
+  padding: 2em 1em;
+}
+
+.container {
+  @include container;
+}
