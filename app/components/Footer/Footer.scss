@@ -12,21 +12,7 @@
 
 .copyright {
   flex: 1 1 100%;
-}
-
-.socialLinks {
-  padding: 1em 0;
-  flex: 1 1 100%;
-  font-size: 2em;
-
-  a {
-    color: $white;
-    text-decoration: none;
-
-    &:hover {
-      color: $lightGrey;
-    }
-  }
+  margin-top: 1em;
 }
 
 .links {

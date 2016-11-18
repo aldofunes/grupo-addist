@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import App from '../layouts/App';
+import Privacy from '../views/Privacy';
 import Home from '../views/Home';
 import About from '../views/About';
 
@@ -11,6 +12,7 @@ const Routes = () => (
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="nosotros" component={About}/>
+      <Route path="privacidad" component={Privacy}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

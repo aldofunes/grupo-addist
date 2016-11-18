@@ -5,7 +5,7 @@ import Values from './Values';
 
 class About extends React.Component {
   componentDidMount() {
-    // TODO: Track pageview
+    _gs('track');
   }
 
   render() {

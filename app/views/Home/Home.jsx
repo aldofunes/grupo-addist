@@ -8,7 +8,6 @@ import Ease from './Ease';
 class Home extends React.Component {
   componentDidMount() {
     _gs('track');
-    _gs('event', 'Testing integration');
   }
   render() {
     return (
