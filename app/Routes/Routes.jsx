@@ -4,6 +4,7 @@ import App from '../layouts/App';
 import Privacy from '../views/Privacy';
 import Home from '../views/Home';
 import About from '../views/About';
+import Services from '../views/Services';
 
 import NotFound from '../views/NotFound';
 
@@ -12,6 +13,7 @@ const Routes = () => (
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="nosotros" component={About}/>
+      <Route path="servicios" component={Services}/>
       <Route path="privacidad" component={Privacy}/>
       <Route path="*" component={NotFound}/>
     </Route>

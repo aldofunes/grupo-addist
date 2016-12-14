@@ -1,0 +1,54 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.section {
+  padding: 2em 1em;
+  background: $lighterGrey;
+}
+
+.container {
+  @include container;
+  text-align: center;
+}
+
+.title {
+  flex: 1 1 100%;
+}
+.text {
+  flex: 1 1 100%;
+
+  @include media(md) {
+    flex: 1 1 60%;
+  }
+}
+.image {
+  flex: 1 1 100%;
+
+  img {
+    width: 100%;
+    max-width: 30em;
+    padding: 1em;
+  }
+
+  @include media(md) {
+    flex: 1 1 40%;
+  }
+}
+.button {
+  flex: 1 1 100%;
+  a {
+    display: block;
+    border: 2px solid $secondary;
+    padding: .5em;
+    width: 100%;
+    border-radius: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    color: $secondary;
+
+    &:hover {
+      background: $secondary;
+      color: $white;
+    }
+  }
+}
