@@ -27,10 +27,11 @@
 }
 
 .button {
-  padding: 1em;
+  padding: .8em;
   background-color: $primary;
   border-radius: .5em;
   color: $white;
   display: block;
   margin-top: 1em;
+  text-decoration: none;
 }

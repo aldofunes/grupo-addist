@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import styles from './Competitive.scss';
 
 const Competitive = () => (
@@ -14,7 +15,7 @@ const Competitive = () => (
         <img className={styles.image} src={require('./competitiveness.jpg')} alt="Competitividad" />
       </div>
       <div className={styles.column}>
-        <a className={styles.button}>Contáctanos</a>
+        <Link to="/contacto" className={styles.button}>Contáctanos</Link>
       </div>
     </div>
   </section>

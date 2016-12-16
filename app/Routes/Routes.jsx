@@ -5,6 +5,8 @@ import Privacy from '../views/Privacy';
 import Home from '../views/Home';
 import About from '../views/About';
 import Services from '../views/Services';
+import Employees from '../views/Employees';
+import Enterprises from '../views/Enterprises';
 
 import NotFound from '../views/NotFound';
 
@@ -14,6 +16,8 @@ const Routes = () => (
       <IndexRoute component={Home}/>
       <Route path="nosotros" component={About}/>
       <Route path="servicios" component={Services}/>
+      <Route path="empleados" component={Employees}/>
+      <Route path="empresas" component={Enterprises}/>
       <Route path="privacidad" component={Privacy}/>
       <Route path="*" component={NotFound}/>
     </Route>
