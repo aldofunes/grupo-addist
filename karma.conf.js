@@ -1,32 +1,30 @@
-// Reference: http://karma-runner.github.io/0.13/config/configuration-file.html
-module.exports = function karmaConfig (config) {
+// Karma configuration
+
+module.exports = function(config) {
   config.set({
-    frameworks: [
-      // Reference: https://github.com/karma-runner/karma-mocha
-      // Set framework to mocha
-      'mocha'
-    ],
-    basePath: 'app',
 
-    reporters: [
-      // Reference: https://github.com/mlex/karma-spec-reporter
-      // Set reporter to print detailed results to console
-      'spec',
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: 'src',
 
-      // Reference: https://github.com/karma-runner/karma-coverage
-      // Output code coverage files
-      'coverage'
-    ],
 
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['mocha'],
+
+
+    // list of files / patterns to load in the browser
     files: [
-      // Reference: https://www.npmjs.com/package/phantomjs-polyfill
-      // Needed because React.js requires bind and phantomjs does not support it
-      '../node_modules/phantomjs-polyfill/bind-polyfill.js',
-
-      // Grab all files in the tests directory that contain _test.
       '**/*_test.*'
     ],
 
+
+    // list of files to exclude
+    exclude: [
+    ],
+
+
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       // Reference: http://webpack.github.io/docs/testing.html
       // Reference: https://github.com/webpack/karma-webpack
@@ -34,12 +32,42 @@ module.exports = function karmaConfig (config) {
       '**/*_test.*': ['webpack', 'sourcemap']
     },
 
-    browsers: [
-      // Run tests using PhantomJS
-      'PhantomJS'
-    ],
 
+    // test results reporter to use
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    reporters: ['progress', 'coverage'],
+
+
+    // web server port
+    port: 9876,
+
+
+    // enable / disable colors in the output (reporters and logs)
+    colors: true,
+
+
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_INFO,
+
+
+    // enable / disable watching file and executing tests whenever any file changes
+    autoWatch: false,
+
+
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['PhantomJS'],
+
+
+    // Continuous Integration mode
+    // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
+
+    // Concurrency level
+    // how many browser should be started simultaneous
+    concurrency: Infinity,
 
     // Configure code coverage reporter
     coverageReporter: {
@@ -54,6 +82,5 @@ module.exports = function karmaConfig (config) {
     webpackMiddleware: {
       noInfo: true
     }
-  });
-};
-
+  })
+}

@@ -58,10 +58,10 @@ exports.loadIsparta = function (path) {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /^(?!.*_test.*).*\.(js|jsx)$/,
           include: path,
           enforce: 'pre',
-          use: 'isparta'
+          use: 'isparta-loader'
         }
       ]
     }
@@ -76,7 +76,7 @@ exports.lintJSX = function (include) {
           test: /\.(js|jsx)$/,
           include: include,
           enforce: 'pre',
-          use: 'eslint'
+          use: 'eslint-loader'
         }
       ]
     }

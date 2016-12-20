@@ -10,7 +10,7 @@ const parts = require('./libs/parts');
 process.env.BABEL_ENV = process.env.npm_lifecycle_event;
 
 const PATHS = {
-  app: path.join(__dirname, 'app'),
+  app: path.join(__dirname, 'src'),
   style: [
     path.join(__dirname, 'node_modules', 'normalize-css', 'normalize.css')
   ],

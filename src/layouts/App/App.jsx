@@ -6,11 +6,13 @@ import CookieConsent from '../../components/CookieConsent';
 
 class App extends React.Component {
   componentDidMount() {
+    /* eslint-disable no-undef */
     // Initiate GoSquared analytics without tracking pageview
     _gs(process.env.GOSQUARED, false);
 
     // Set to true to track localhost (useful for QA)
     _gs('set', 'trackLocal', true);
+    /* eslint-enable no-undef */
   }
 
   render() {
