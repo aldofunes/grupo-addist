@@ -25,6 +25,11 @@ const common = merge(
     output: {
       path: PATHS.build,
       filename: '[name].js'
+    },
+    resolve: {
+      alias: {
+        'react/lib/DOMProperty': 'react-dom/lib/DOMProperty'
+      }
     }
   },
   parts.indexTemplate({
@@ -50,12 +55,6 @@ switch (process.env.npm_lifecycle_event) {
           filename: '[name].[chunkhash].js',
           chunkFilename: '[chunkhash].js',
           // publicPath: '/kanban-demo/'
-        },
-        resolve: {
-          alias: {
-            'react': 'react-lite',
-            'react-dom': 'react-lite'
-          }
         }
       },
       parts.clean(PATHS.build),

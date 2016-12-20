@@ -1,0 +1,31 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.container {
+  padding: 2em 1em;
+  @include container;
+}
+
+.header {
+  text-align: center;
+  flex: 1 1 100%;
+}
+
+.contactDetails {
+  flex: 1 1 100%;
+  padding: 1em;
+
+  @include media(md) {
+    flex: 1 1 40%;
+  }
+}
+
+.contactForm {
+  flex: 1 1 100%;
+  padding: 1em;
+  text-align: left;
+
+  @include media(md) {
+    flex: 1 1 60%;
+  }
+}

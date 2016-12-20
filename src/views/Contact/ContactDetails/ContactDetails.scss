@@ -1,0 +1,35 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+
+.details {
+  @include container;
+}
+
+.detail {
+  flex: 1 1 100%;
+  text-align: center;
+
+  img {
+    width: 6em;
+    margin: 1em auto;
+  }
+
+  a {
+    display: block;
+    color: $primary;
+    text-decoration: none;
+    font-size: 1.5em;
+
+    &:hover {
+      color: darken($primary, 20%);
+    }
+  }
+
+  @include media(sm) {
+    flex: 1 1 50%;
+  }
+
+  @include media(md) {
+    flex: 1 1 100%;
+  }
+}

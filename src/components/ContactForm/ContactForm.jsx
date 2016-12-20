@@ -1,4 +1,7 @@
 import React from 'react';
+import {Config, SES} from 'aws-sdk';
+import {renderEmail} from 'react-html-email';
+import EmailTemplate from './EmailTemplate';
 import styles from './ContactForm.scss';
 import Input from './Input';
 
@@ -7,40 +10,29 @@ class ContactForm extends React.Component {
     super(props);
 
     this.state = {
-      firstName: '',
-      lastName: '',
+      name: '',
       email: '',
       message: '',
-      firstNameValid: false,
-      lastNameValid: false,
+      nameValid: false,
       emailValid: false,
       messageValid: false,
       isSubmitting: false,
       success: false,
+      errorMessage: ''
     };
 
-    this.onChangeFirstName = this.onChangeFirstName.bind(this);
-    this.onChangeLastName = this.onChangeLastName.bind(this);
+    this.onChangeName = this.onChangeName.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangeMessage = this.onChangeMessage.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChangeFirstName(event) {
-    const firstName = event.target.value;
+  onChangeName(event) {
+    const name = event.target.value;
 
     this.setState({
-      firstName,
-      firstNameValid: Boolean(firstName)
-    });
-  }
-
-  onChangeLastName(event) {
-    const lastName = event.target.value;
-
-    this.setState({
-      lastName,
-      lastNameValid: Boolean(lastName)
+      name,
+      nameValid: Boolean(name)
     });
   }
 
@@ -64,7 +56,7 @@ class ContactForm extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    const { firstName, lastName, email, message } = this.state;
+    const { name, email, message } = this.state;
 
     this.setState({
       isSubmitting: true
@@ -73,84 +65,103 @@ class ContactForm extends React.Component {
     _gs('event', 'Web form submission');
     _gs('identify', {
       email,
-      first_name: firstName,
-      last_name: lastName
+      first_name: name,
     });
 
-    const self = this;
+    const config = new Config({
+      region: 'us-east-1'
+    });
 
-    _agile.set_email(email);
+    const ses = new SES({
+      region: 'us-east-1',
+      accessKeyId: 'AKIAIZ4OUSCI2D4ZWKNQ',
+      secretAccessKey: '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'
+    });
 
-    _agile.create_contact({
-      first_name: firstName,
-      last_name: lastName,
-      email,
-      tags: 'Website'
-    }, {
-      success(data) {
-        _agile.add_note({
-          subject: 'Web form submission',
-          description: message
-        }, {
-          success(data) {
-            self.setState({
-              firstName: '',
-              lastName: '',
-              email: '',
-              message: '',
-            });
-          },
-          error({ error }) {
-            console.log({ error });
-          }
-        });
+    ses.sendEmail({
+      Destination: {
+        ToAddresses: [
+          'hola@addist.mx'
+        ]
       },
-      error({ error }) {
-        console.log({ error });
+      Message: {
+        Body: {
+          Html: {
+            Data: renderEmail(EmailTemplate({ name, email, message }))
+          }
+        },
+        Subject: {
+          Data: '[www.addist.mx] Formulario de contacto' /* required */
+        }
+      },
+      Source: 'no_reply@addist.mx', /* required */
+      Tags: [
+        {
+          Name: 'Customer', /* required */
+          Value: 'ADDIST' /* required */
+        }
+      ]
+    }, (error, data) => {
+      if (error) {
+        return this.setState({
+          errorMessage: error.message
+        });
+      }
+
+      if (data.MessageId) {
+        this.setState({
+          name: '',
+          email: '',
+          message: '',
+          nameValid: false,
+          emailValid: false,
+          messageValid: false,
+          isSubmitting: false,
+          success: true,
+          errorMessage: ''
+        });
       }
     });
   }
 
   render() {
     const {
-      firstName,
-      lastName,
+      name,
       email,
       message,
-      firstNameValid,
-      lastNameValid,
+      nameValid,
       emailValid,
-      messageValid
+      messageValid,
+      success,
+      errorMessage
     } = this.state;
 
-    const formValid = (firstNameValid && lastNameValid && emailValid && messageValid);
+    const formValid = (nameValid && emailValid && messageValid);
 
     return (
       <form className={styles.form} onSubmit={this.onSubmit}>
-
+        {errorMessage ? (
+            <p style={{ color: 'red' }}>{errorMessage}</p>
+          ) : ''}
+        {success ? (
+            <p style={{ color: 'green' }}>Gracias por contactarnos</p>
+          ) : ''}
         <Input
-          label="First Name"
+          label="Nombre"
           type="text"
-          value={firstName}
-          onChange={this.onChangeFirstName}
+          value={name}
+          onChange={this.onChangeName}
         />
 
         <Input
-          label="Last Name"
-          type="text"
-          value={lastName}
-          onChange={this.onChangeLastName}
-        />
-
-        <Input
-          label="Email"
+          label="Correo electrónico"
           type="email"
           value={email}
           onChange={this.onChangeEmail}
         />
 
         <Input
-          label="Message"
+          label="Mensaje"
           type="textArea"
           value={message}
           onChange={this.onChangeMessage}
