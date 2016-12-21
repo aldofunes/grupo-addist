@@ -7,6 +7,7 @@ const Benefits = () => (
     <div className={styles.container}>
       <Benefit image={require('./law.svg')} title="Prestaciones justas" />
       <Benefit image={require('./contract.svg')} title="Seguridad laboral" />
+      <Benefit image={require('./partnership.svg')} title="Trato digno" />
     </div>
   </div>
 );

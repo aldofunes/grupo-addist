@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import FaHome from 'react-icons/lib/fa/home';
 import FaInfo from 'react-icons/lib/fa/info';
 import FaServer from 'react-icons/lib/fa/server';
@@ -8,7 +8,7 @@ import MdBusiness from 'react-icons/lib/md/business';
 import FaInbox from 'react-icons/lib/fa/inbox';
 import styles from './MobileMenu.scss';
 
-const MobileMenu = ({onClick}) => (
+const MobileMenu = ({ onClick }) => (
   <nav className={styles.menu}>
     <Link
       className={styles.menuItem}
@@ -62,7 +62,7 @@ const MobileMenu = ({onClick}) => (
 );
 
 MobileMenu.propTypes = {
-  onClick: React.PropTypes.func
+  onClick: React.PropTypes.func,
 };
 
 export default MobileMenu;

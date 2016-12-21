@@ -1,6 +1,6 @@
 import React from 'react';
-import {Config, SES} from 'aws-sdk';
-import {renderEmail} from 'react-html-email';
+import { SES } from 'aws-sdk';
+import { renderEmail } from 'react-html-email';
 import EmailTemplate from './EmailTemplate';
 import styles from './ContactForm.scss';
 import Input from './Input';
@@ -18,7 +18,7 @@ class ContactForm extends React.Component {
       messageValid: false,
       isSubmitting: false,
       success: false,
-      errorMessage: ''
+      errorMessage: '',
     };
 
     this.onChangeName = this.onChangeName.bind(this);
@@ -32,7 +32,7 @@ class ContactForm extends React.Component {
 
     this.setState({
       name,
-      nameValid: Boolean(name)
+      nameValid: Boolean(name),
     });
   }
 
@@ -41,7 +41,7 @@ class ContactForm extends React.Component {
 
     this.setState({
       email,
-      emailValid: Boolean(email)
+      emailValid: Boolean(email),
     });
   }
 
@@ -50,7 +50,7 @@ class ContactForm extends React.Component {
 
     this.setState({
       message,
-      messageValid: Boolean(message)
+      messageValid: Boolean(message),
     });
   }
 
@@ -59,7 +59,7 @@ class ContactForm extends React.Component {
     const { name, email, message } = this.state;
 
     this.setState({
-      isSubmitting: true
+      isSubmitting: true,
     });
 
     _gs('event', 'Web form submission');
@@ -68,59 +68,53 @@ class ContactForm extends React.Component {
       first_name: name,
     });
 
-    const config = new Config({
-      region: 'us-east-1'
-    });
-
     const ses = new SES({
       region: 'us-east-1',
       accessKeyId: 'AKIAIZ4OUSCI2D4ZWKNQ',
-      secretAccessKey: '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'
+      secretAccessKey: 'lcMAUhObXb5mh681kapDcx1l8l7nAAUaQBprn1pN',
     });
 
     ses.sendEmail({
       Destination: {
         ToAddresses: [
-          'hola@addist.mx'
-        ]
+          'hola@addist.mx',
+        ],
       },
       Message: {
         Body: {
           Html: {
-            Data: renderEmail(EmailTemplate({ name, email, message }))
-          }
+            Data: renderEmail(EmailTemplate({ name, email, message })),
+          },
         },
         Subject: {
-          Data: '[www.addist.mx] Formulario de contacto' /* required */
-        }
+          Data: '[www.addist.mx] Formulario de contacto', /* required */
+        },
       },
       Source: 'no_reply@addist.mx', /* required */
       Tags: [
         {
           Name: 'Customer', /* required */
-          Value: 'ADDIST' /* required */
-        }
-      ]
-    }, (error, data) => {
+          Value: 'ADDIST', /* required */
+        },
+      ],
+    }, (error) => {
       if (error) {
         return this.setState({
-          errorMessage: error.message
+          errorMessage: error.message,
         });
       }
 
-      if (data.MessageId) {
-        this.setState({
-          name: '',
-          email: '',
-          message: '',
-          nameValid: false,
-          emailValid: false,
-          messageValid: false,
-          isSubmitting: false,
-          success: true,
-          errorMessage: ''
-        });
-      }
+      return this.setState({
+        name: '',
+        email: '',
+        message: '',
+        nameValid: false,
+        emailValid: false,
+        messageValid: false,
+        isSubmitting: false,
+        success: true,
+        errorMessage: '',
+      });
     });
   }
 
@@ -133,19 +127,15 @@ class ContactForm extends React.Component {
       emailValid,
       messageValid,
       success,
-      errorMessage
+      errorMessage,
     } = this.state;
 
     const formValid = (nameValid && emailValid && messageValid);
 
     return (
       <form className={styles.form} onSubmit={this.onSubmit}>
-        {errorMessage ? (
-            <p style={{ color: 'red' }}>{errorMessage}</p>
-          ) : ''}
-        {success ? (
-            <p style={{ color: 'green' }}>Gracias por contactarnos</p>
-          ) : ''}
+        {errorMessage ? <p style={{ color: 'red' }}>{errorMessage}</p> : ''}
+        {success ? <p style={{ color: 'green' }}>Gracias por contactarnos</p> : ''}
         <Input
           label="Nombre"
           type="text"
@@ -169,7 +159,7 @@ class ContactForm extends React.Component {
 
         <button disabled={!formValid} className={styles.submitButton} type="submit">Submit</button>
       </form>
-    )
+    );
   }
 }
 

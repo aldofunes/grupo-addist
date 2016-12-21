@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactHTMLEmail, {Email, Item, Box, Span} from 'react-html-email';
+import ReactHTMLEmail, { Email, Item, Box, Span } from 'react-html-email';
 
 // set up React to support a few HTML attributes useful for legacy clients
 ReactHTMLEmail.injectReactEmailAttributes();
@@ -48,6 +48,6 @@ EmailTemplate.propTypes = {
   name: React.PropTypes.string.isRequired,
   email: React.PropTypes.string.isRequired,
   message: React.PropTypes.string.isRequired,
-}
+};
 
 export default EmailTemplate;

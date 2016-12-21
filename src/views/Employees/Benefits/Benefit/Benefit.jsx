@@ -10,7 +10,7 @@ const Benefit = ({ image, title }) => (
 
 Benefit.propTypes = {
   image: React.PropTypes.string.isRequired,
-  title: React.PropTypes.string.isRequired
+  title: React.PropTypes.string.isRequired,
 };
 
 export default Benefit;

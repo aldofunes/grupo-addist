@@ -12,7 +12,7 @@ const Value = ({ image, title, body }) => (
 Value.propTypes = {
   image: React.PropTypes.string.isRequired,
   title: React.PropTypes.string.isRequired,
-  body: React.PropTypes.string.isRequired
+  body: React.PropTypes.string.isRequired,
 };
 
 export default Value;

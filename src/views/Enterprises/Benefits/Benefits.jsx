@@ -35,7 +35,8 @@ const Benefits = () => (
       />
       <Benefit
         image={require('./trusted-security.svg')}
-        title="ADDIST asume la responsabilidad patronal y legal de los empleados ante las autoridades laborales como IMSS."
+        title="ADDIST asume la responsabilidad patronal y legal de los empleados ante las
+         autoridades laborales como IMSS."
       />
     </div>
   </div>

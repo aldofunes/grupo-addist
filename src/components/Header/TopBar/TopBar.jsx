@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router';
-import styles from './TopBar.scss';
 import FaBars from 'react-icons/lib/fa/bars';
+import React from 'react';
+import { Link } from 'react-router';
+import styles from './TopBar.scss';
 import DesktopMenu from '../DesktopMenu';
 
 const TopBar = ({ onToggle }) => (
@@ -12,7 +12,6 @@ const TopBar = ({ onToggle }) => (
 
     <DesktopMenu />
 
-
     <button className={styles.toggleButton} onClick={onToggle}>
       <FaBars height="2em" width="2em" />
     </button>
@@ -20,7 +19,7 @@ const TopBar = ({ onToggle }) => (
 );
 
 TopBar.propTypes = {
-  onToggle: React.PropTypes.func.isRequired
+  onToggle: React.PropTypes.func.isRequired,
 };
 
 export default TopBar;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Contact.scss'
+import styles from './Contact.scss';
 import Banner from './Banner';
 import ContactDetails from './ContactDetails';
 import ContactForm from '../../components/ContactForm';

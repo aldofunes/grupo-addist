@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import styles from './ThreePL.scss';
 
 const ThreePL = () => (
@@ -14,7 +14,9 @@ const ThreePL = () => (
       <div className={styles.text}>
         <h3>Proveemos funciones logísticas que permite optimizar la cadena entre empresas</h3>
         <p>
-          Ofrecemos una solución logística externalizada totalmente integrada. Estudiamos y comprendemos las necesidades y los puntos débiles de nuestros clientes para así poder incrementar su productividad.
+          Ofrecemos una solución logística externalizada totalmente integrada. Estudiamos y
+          comprendemos las necesidades y los puntos débiles de nuestros clientes para así poder
+          incrementar su productividad.
         </p>
       </div>
       <div className={styles.button}>

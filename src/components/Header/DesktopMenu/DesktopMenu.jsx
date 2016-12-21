@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import styles from './DesktopMenu.scss';
 
 const MobileMenu = ({ onClick }) => (
@@ -48,7 +48,7 @@ const MobileMenu = ({ onClick }) => (
 );
 
 MobileMenu.propTypes = {
-  onClick: React.PropTypes.func
+  onClick: React.PropTypes.func,
 };
 
 export default MobileMenu;

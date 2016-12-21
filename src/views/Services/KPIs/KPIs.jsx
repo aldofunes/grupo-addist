@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import styles from './KPIs.scss';
 
 const KPIs = () => (
@@ -11,7 +11,9 @@ const KPIs = () => (
       <div className={styles.text}>
         <h3>Hacemos que tu empresa tenga un excelente desempeño</h3>
         <p>
-          Utilizamos métricas que nos ayudan a medir y a cuantificar el rendimiento del progreso en función de unas metas y objetivos planteados para las distintas actividades que llevan a cabo nuestros clientes en sus empresas.
+          Utilizamos métricas que nos ayudan a medir y a cuantificar el rendimiento del progreso en
+          función de unas metas y objetivos planteados para las distintas actividades que llevan a
+          cabo nuestros clientes en sus empresas.
         </p>
       </div>
       <div className={styles.image}>

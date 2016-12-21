@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import styles from './Recruitment.scss';
 
 const Recruitment = () => (
@@ -11,7 +11,9 @@ const Recruitment = () => (
       <div className={styles.text}>
         <h3>Hacemos más fácil el proceso de reclutamiento</h3>
         <p>
-          Nuestro trabajo es buscar, encontrar, entrevistar y seleccionar a los mejores candidatos que nuestros clientes necesita para hacer crecer su empresa. Nuestro objetivo es atraer candidatos potencialmente cualificados capaces de tomar cargos en la organización.
+          Nuestro trabajo es buscar, encontrar, entrevistar y seleccionar a los mejores candidatos
+          que nuestros clientes necesita para hacer crecer su empresa. Nuestro objetivo es atraer
+          candidatos potencialmente cualificados capaces de tomar cargos en la organización.
         </p>
       </div>
       <div className={styles.image}>

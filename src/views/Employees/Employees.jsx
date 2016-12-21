@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Banner from './Banner';
 import Benefits from './Benefits';
 import Work from './Work';
 
 class Employees extends Component {
   componentDidMount() {
-    // TODO: track pageview
+    _gs('track');
   }
 
   render() {

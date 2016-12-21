@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import styles from './Payroll.scss';
 
 const Payroll = () => (
@@ -14,7 +14,9 @@ const Payroll = () => (
       <div className={styles.text}>
         <h3>Aumenta tu productividad y déjanos la administración de tu nómina</h3>
         <p>
-          Seremos tu área operativa de nómina. Cumple tus obligaciones generadas de la gestión de la nómina sin esfuerzo. Nuestro objetivo es apoyar a nuestros clientes para que puedan enfocarse en las tareas que agregan valor a su negocio
+          Seremos tu área operativa de nómina. Cumple tus obligaciones generadas de la gestión de la
+          nómina sin esfuerzo. Nuestro objetivo es apoyar a nuestros clientes para que puedan
+          enfocarse en las tareas que agregan valor a su negocio
         </p>
       </div>
       <div className={styles.button}>

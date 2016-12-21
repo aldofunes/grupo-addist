@@ -8,7 +8,7 @@ class Header extends React.Component {
     super(props);
 
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
 
     this.toggle = this.toggle.bind(this);
@@ -18,7 +18,7 @@ class Header extends React.Component {
     const { isOpen } = this.state;
 
     this.setState({
-      isOpen: !isOpen
+      isOpen: !isOpen,
     });
   }
 

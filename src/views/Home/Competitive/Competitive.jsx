@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import styles from './Competitive.scss';
 
 const Competitive = () => (
@@ -8,7 +8,8 @@ const Competitive = () => (
       <div className={styles.column}>
         <h2>Sé más competitivo</h2>
         <h4>
-          Nuestros clientes son más competitivos y flexibles gracias a nuestros servicios de tercerización
+          Nuestros clientes son más competitivos y flexibles gracias a nuestros servicios de
+          tercerización
         </h4>
       </div>
       <div className={styles.column}>

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions, no-undef */
 import React from 'react';
-import {shallow} from 'enzyme';
-import {expect} from 'chai';
+import { shallow } from 'enzyme';
+import { expect } from 'chai';
 import App from './App';
 import Header from '../../components/Header';
 import CookieConsent from '../../components/CookieConsent';

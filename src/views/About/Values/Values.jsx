@@ -8,27 +8,32 @@ const Values = () => (
       <Value
         image={require('./team-relationship.svg')}
         title="Sentido de pertenencia"
-        body="Nos sentimos orgullosos de formar parte de ADDIST y estamos comprometidos con su misión, visión y valores"
+        body="Nos sentimos orgullosos de formar parte de ADDIST y estamos comprometidos con su
+        misión, visión y valores"
       />
       <Value
         image={require('./handshake-agreement.svg')}
         title="Honestidad"
-        body="Somos congruentes con lo que pensamos, decimos y hacemos. Lo que hacemos, lo hacemos con honradez y transparencia."
+        body="Somos congruentes con lo que pensamos, decimos y hacemos. Lo que hacemos, lo hacemos
+         con honradez y transparencia."
       />
       <Value
         image={require('./lifebuoy.svg')}
         title="Servicio"
-        body="Gracias a nuestra mejora continua logramos satisfacer las necesidades y expectativas de nuestros clientes."
+        body="Gracias a nuestra mejora continua logramos satisfacer las necesidades y expectativas
+         de nuestros clientes."
       />
       <Value
         image={require('./team-leader.svg')}
         title="Trabajo en equipo"
-        body="Estamos disponibles para nuestros clientes. Trabajamos en conjunto, sumando fuerzas para lograr mejores resultados."
+        body="Estamos disponibles para nuestros clientes. Trabajamos en conjunto, sumando fuerzas
+         para lograr mejores resultados."
       />
       <Value
         image={require('./consulting-manager.svg')}
         title="Responsabilidad"
-        body="Nos comprometemos y cumplimos con nuestras actividades laborales adhiriéndonos a políticas y procedimientos establecidos."
+        body="Nos comprometemos y cumplimos con nuestras actividades laborales adhiriéndonos a
+         políticas y procedimientos establecidos."
       />
     </div>
   </div>

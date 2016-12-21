@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import styles from './CookieConsent.scss';
 
 class CookieConsent extends React.Component {
@@ -11,7 +11,7 @@ class CookieConsent extends React.Component {
     };
 
     this.dismissConsent = () => {
-      let date = new Date();
+      const date = new Date();
       date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
       document.cookie = `consent_dismissed=yes; expires=${date.toGMTString()}; path=/`;
       this.setState({ consentDismissed: true });
@@ -30,7 +30,7 @@ class CookieConsent extends React.Component {
       return null;
     }
 
-    const {text, link, linkText, buttonText} = this.props;
+    const { text, link, linkText, buttonText } = this.props;
 
     return (
       <div className={styles.container}>
@@ -47,14 +47,14 @@ CookieConsent.propTypes = {
   text: React.PropTypes.string,
   link: React.PropTypes.string,
   linkText: React.PropTypes.string,
-  buttonText: React.PropTypes.string
+  buttonText: React.PropTypes.string,
 };
 
 CookieConsent.defaultProps = {
   text: 'This website uses cookies to ensure you get the best experience on our website',
   link: '/privacy',
   linkText: 'More info',
-  buttonText: 'Got it!'
+  buttonText: 'Got it!',
 };
 
 export default CookieConsent;

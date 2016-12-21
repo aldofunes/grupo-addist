@@ -1,6 +1,6 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {expect} from 'chai';
+import { shallow } from 'enzyme';
+import { expect } from 'chai';
 import CookieConsent from './CookieConsent';
 
 describe('<CookieConsent />', () => {
@@ -15,7 +15,7 @@ describe('<CookieConsent />', () => {
 
   it('should render with props passed to it', () => {
     const wrapper = shallow(
-      <CookieConsent text="text" link="link" linkText="linkText" buttonText="buttonText" />
+      <CookieConsent text="text" link="link" linkText="linkText" buttonText="buttonText" />,
     );
 
     expect(wrapper.contains('text')).to.equal(true);
@@ -33,11 +33,11 @@ describe('<CookieConsent />', () => {
   describe('consentDismissed', () => {
     it('should be false when no cookie is present', () => {
       const wrapper = shallow(<CookieConsent />);
-      expect(wrapper.state('consentDismissed')).to.equal(false)
+      expect(wrapper.state('consentDismissed')).to.equal(false);
     });
 
     it('should be true when cookie is present', () => {
-      let date = new Date();
+      const date = new Date();
       date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
       document.cookie = `consent_dismissed=yes; expires=${date.toGMTString()}; path=/`;
       const wrapper = shallow(<CookieConsent />);
@@ -52,5 +52,4 @@ describe('<CookieConsent />', () => {
     wrapper.find('button').simulate('click');
     expect(wrapper.state('consentDismissed')).to.equal(true);
   });
-
 });

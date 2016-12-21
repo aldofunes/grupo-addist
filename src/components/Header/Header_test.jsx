@@ -1,6 +1,6 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
-import {expect} from 'chai';
+import { shallow, mount } from 'enzyme';
+import { expect } from 'chai';
 import Header from './Header';
 import TopBar from './TopBar';
 import MobileMenu from './MobileMenu';
@@ -18,7 +18,7 @@ describe('<Header />', () => {
 
     expect(wrapper.containsMatchingElement(<MobileMenu />)).to.be.false;
     wrapper.setState({
-      isOpen: true
+      isOpen: true,
     });
     expect(wrapper.containsMatchingElement(<MobileMenu />)).to.be.true;
   });
@@ -31,5 +31,5 @@ describe('<Header />', () => {
     expect(wrapper.containsMatchingElement(<MobileMenu />)).to.be.true;
     wrapper.find('button').simulate('click');
     expect(wrapper.containsMatchingElement(<MobileMenu />)).to.be.false;
-  })
+  });
 });
