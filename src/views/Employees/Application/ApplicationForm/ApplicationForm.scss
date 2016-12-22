@@ -1,0 +1,46 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+
+.form {
+  @include container;
+}
+
+.button {
+  background-color: $secondary;
+  color: $white;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  width: 100%;
+
+  &[disabled] {
+    opacity: .3;
+    cursor: not-allowed;
+  }
+}
+
+.uploadArea {
+  position: relative;
+  background-color: #ffffff;
+  border: 4px dashed #dce4ec;
+  width: 100%;
+  padding: 2em 0;
+  text-align: center;
+  cursor: pointer;
+  border-radius: .5em;
+  margin-bottom: 1em;
+
+  * {
+    cursor: pointer;
+  }
+
+  input[type="file"] {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    opacity: 0;
+  }
+}

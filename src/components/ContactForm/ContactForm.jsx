@@ -3,7 +3,7 @@ import { SES } from 'aws-sdk';
 import { renderEmail } from 'react-html-email';
 import EmailTemplate from './EmailTemplate';
 import styles from './ContactForm.scss';
-import Input from './Input';
+import Input from '../Input';
 
 class ContactForm extends React.Component {
   constructor(props) {

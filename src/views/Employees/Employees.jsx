@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Banner from './Banner';
 import Benefits from './Benefits';
 import Work from './Work';
+import Application from './Application';
 
 class Employees extends Component {
   componentDidMount() {
@@ -14,6 +15,7 @@ class Employees extends Component {
         <Banner />
         <Benefits />
         <Work />
+        <Application />
       </div>
     );
   }
