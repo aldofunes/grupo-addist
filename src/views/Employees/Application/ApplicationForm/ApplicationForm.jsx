@@ -48,6 +48,8 @@ class ApplicationForm extends Component {
         value: '',
         state: null,
       },
+      success: false,
+      error: ''
     };
 
     this.onNameChange = this.onNameChange.bind(this);
@@ -138,20 +140,20 @@ class ApplicationForm extends Component {
         Key: `www.addist.mx/curriculums/${fileId}-${file.name}`,
         Body: file,
       }, (error, data) => {
-      if (error) {
-        console.error(error);
-      }
+        if (error) {
+          console.error(error);
+        }
 
-      this.setState(
-        {
-          curriculum: {
-            fileName: file.name,
-            url: data.Location,
-            state: 'success',
+        this.setState(
+          {
+            curriculum: {
+              fileName: file.name,
+              url: data.Location,
+              state: 'success',
+            },
           },
-        },
         );
-    },
+      },
     );
   }
 
@@ -222,56 +224,57 @@ class ApplicationForm extends Component {
           },
         ],
       }, (error) => {
-      if (error) {
+        if (error) {
+          return this.setState(
+            {
+              error: error.message,
+            },
+          );
+        }
+
         return this.setState(
           {
-            errorMessage: error.message,
+            name: {
+              value: '',
+              state: null,
+            },
+            email: {
+              value: '',
+              state: null,
+            },
+            phone: {
+              value: '',
+              state: null,
+            },
+            birthDate: {
+              value: '',
+              state: null,
+            },
+            nationality: {
+              value: '',
+              state: null,
+            },
+            city: {
+              value: '',
+              state: null,
+            },
+            postCode: {
+              value: '',
+              state: null,
+            },
+            curriculum: {
+              fileName: '',
+              url: '',
+              state: null,
+            },
+            message: {
+              value: '',
+              state: null,
+            },
+            success: true,
           },
-          );
-      }
-
-      return this.setState(
-        {
-          name: {
-            value: '',
-            state: null,
-          },
-          email: {
-            value: '',
-            state: null,
-          },
-          phone: {
-            value: '',
-            state: null,
-          },
-          birthDate: {
-            value: '',
-            state: null,
-          },
-          nationality: {
-            value: '',
-            state: null,
-          },
-          city: {
-            value: '',
-            state: null,
-          },
-          postCode: {
-            value: '',
-            state: null,
-          },
-          curriculum: {
-            fileName: '',
-            url: '',
-            state: null,
-          },
-          message: {
-            value: '',
-            state: null,
-          },
-        },
         );
-    },
+      },
     );
   }
 
@@ -286,6 +289,8 @@ class ApplicationForm extends Component {
       postCode,
       curriculum,
       message,
+      success,
+      error,
     } = this.state;
 
     const valid = (
@@ -301,6 +306,21 @@ class ApplicationForm extends Component {
 
     return (
       <form className={styles.form} onSubmit={this.onSubmit}>
+
+        {success ?
+          <div className={styles.successMessage}>
+            Recibimos tu información y nos comunicaremos contigo
+          </div> :
+          ''
+        }
+
+        {error ?
+          <div className={styles.errorMessage}>
+            {error}
+          </div> :
+          ''
+        }
+
         <Input
           id="name"
           type="text"
@@ -369,7 +389,7 @@ class ApplicationForm extends Component {
             <span>{curriculum.fileName}</span> :
             <span>Sube tu currículo haciendo click o arrastrándolo aquí (PDF o Word)</span>
           }
-          <input type="file" onChange={this.onCurriculumChange} />
+          <input type="file" onChange={this.onCurriculumChange}/>
         </div>
         <Input
           id="message"
