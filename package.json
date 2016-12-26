@@ -7,7 +7,7 @@
     "stats": "webpack --profile --json > stats.json",
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "aws s3 sync build s3://www.addist.mx/ --delete --cache-control max-age=2592000 --profile bmgtech-us",
+    "deploy": "aws s3 sync build s3://www.grupoaddist.com/ --delete --cache-control max-age=2592000 --profile bmgtech-us",
     "test": "karma start",
     "test:tdd": "npm run test -- --auto-watch --no-single-run",
     "test:lint": "eslint ./src --ext .js --ext .jsx --ignore-path .gitignore --ignore-pattern dist --cache"

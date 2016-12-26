@@ -77,7 +77,7 @@ class ContactForm extends React.Component {
     ses.sendEmail({
       Destination: {
         ToAddresses: [
-          'hola@addist.mx',
+          'hola@grupoaddist.com',
         ],
       },
       Message: {
@@ -87,10 +87,10 @@ class ContactForm extends React.Component {
           },
         },
         Subject: {
-          Data: '[www.addist.mx] Formulario de contacto', /* required */
+          Data: '[www.grupoaddist.com] Formulario de contacto', /* required */
         },
       },
-      Source: 'no_reply@addist.mx', /* required */
+      Source: 'no_reply@grupoaddist.com', /* required */
       Tags: [
         {
           Name: 'Customer', /* required */

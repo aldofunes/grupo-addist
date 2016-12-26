@@ -49,7 +49,7 @@ class ApplicationForm extends Component {
         state: null,
       },
       success: false,
-      error: ''
+      error: '',
     };
 
     this.onNameChange = this.onNameChange.bind(this);
@@ -139,7 +139,8 @@ class ApplicationForm extends Component {
         Bucket: 'bmgtech-cdn',
         Key: `www.addist.mx/curriculums/${fileId}-${file.name}`,
         Body: file,
-      }, (error, data) => {
+      },
+      (error, data) => {
         if (error) {
           console.error(error);
         }
@@ -188,7 +189,7 @@ class ApplicationForm extends Component {
       {
         Destination: {
           ToAddresses: [
-            'hola@addist.mx',
+            'hola@grupoaddist.com',
           ],
         },
         Message: {
@@ -213,17 +214,18 @@ class ApplicationForm extends Component {
             },
           },
           Subject: {
-            Data: '[www.addist.mx] Formulario de aplicación', /* required */
+            Data: '[www.grupoaddist.com] Formulario de aplicación', /* required */
           },
         },
-        Source: 'no_reply@addist.mx', /* required */
+        Source: 'no_reply@grupoaddist.com', /* required */
         Tags: [
           {
             Name: 'Customer', /* required */
             Value: 'ADDIST', /* required */
           },
         ],
-      }, (error) => {
+      },
+      (error) => {
         if (error) {
           return this.setState(
             {
@@ -389,7 +391,7 @@ class ApplicationForm extends Component {
             <span>{curriculum.fileName}</span> :
             <span>Sube tu currículo haciendo click o arrastrándolo aquí (PDF o Word)</span>
           }
-          <input type="file" onChange={this.onCurriculumChange}/>
+          <input type="file" onChange={this.onCurriculumChange} />
         </div>
         <Input
           id="message"
